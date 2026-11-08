@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Further Reading</title>
+<meta name="description" content="Further reading for the workshop Context Engineering: Human-to-Human Edition, with free copies where they exist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght,SOFT@9..144,900,100&display=swap">
+<style>
+/* Same look as Nur einfache Wörter: the workshop deck's sky ground, white cards, Cooper Black headings. */
+:root {
+  --bg: #99CDED; --card: #FFFFFF; --ink: #000000; --muted: #2B3A44;
+  --accent: #676DD3; --yellow: #EFBD40; --bad: #A62B17; --good: #3B9A4E;
+  --chip: #E6F2FA; --line: rgba(0, 0, 0, .12);
+  --display: "Cooper Black", "CooperBlackMS", "Fraunces", Georgia, serif;
+  --body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1B24; --card: #182833; --ink: #F1F5F8; --muted: #A9BBC7; --accent: #A2A6F2;
+    --bad: #F08A73; --good: #6CC883; --chip: #22394A; --line: rgba(255, 255, 255, .14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1B24; --card: #182833; --ink: #F1F5F8; --muted: #A9BBC7; --accent: #A2A6F2;
+  --bad: #F08A73; --good: #6CC883; --chip: #22394A; --line: rgba(255, 255, 255, .14);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink); font: 1.0625rem/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2rem 3rem;
+}
+.wrap { max-width: 60rem; margin: 0 auto; display: grid; gap: 2rem; }
+h1 {
+  font: 900 clamp(2.4rem, 6vw, 4.5rem)/1 var(--display); font-variation-settings: "SOFT" 100;
+  letter-spacing: -.02em; margin: 0; text-wrap: balance;
+}
+h2 {
+  font: 900 clamp(1.6rem, 3.5vw, 2.25rem)/1.1 var(--display); font-variation-settings: "SOFT" 100;
+  margin: 0 0 1rem; text-wrap: balance; scroll-margin-top: 1rem;
+}
+.lede { margin: .75rem 0 0; max-width: 42rem; font-size: 1.2rem; }
+.p { color: var(--accent); }
+.controls { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+.seg { display: inline-flex; flex-wrap: wrap; background: var(--card); border-radius: 999px; padding: 4px; gap: 2px; }
+.seg button {
+  font: 700 1rem var(--body); border: 0; cursor: pointer; color: var(--ink); background: transparent;
+  padding: .45rem .95rem; border-radius: 999px;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-weight: 700; }
+nav a { color: var(--ink); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.list { display: grid; gap: 1rem; }
+.card { background: var(--card); padding: 1.25rem 1.5rem; display: grid; gap: .6rem; min-width: 0; }
+.card[hidden] { display: none; }
+.cite { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.slides { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.slides li { background: var(--chip); padding: .1rem .55rem; border-radius: 4px; font-size: .9rem; }
+.what { margin: 0; }
+.caveat { margin: 0; color: var(--muted); }
+.caveat b { color: var(--bad); margin-right: .25rem; }
+.links { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 0; }
+.btn {
+  display: inline-block; font-weight: 700; text-decoration: none; color: var(--ink);
+  padding: .35rem .85rem; border-radius: 999px; box-shadow: inset 0 0 0 2px var(--ink);
+}
+.btn.free { background: var(--good); color: #fff; box-shadow: none; }
+.btn.borrow { background: var(--accent); color: #fff; box-shadow: none; }
+.btn.buy { background: var(--yellow); color: #000; box-shadow: none; }
+.btn:hover { text-decoration: underline; text-underline-offset: 3px; }
+.key { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: 0; color: var(--muted); }
+.key .btn { pointer-events: none; padding: .15rem .6rem; font-size: .9rem; }
+.empty { background: var(--card); padding: 1.25rem 1.5rem; margin: 0; }
+footer { color: var(--muted); font-size: .95rem; display: grid; gap: .4rem; }
+footer p { margin: 0; }
+footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Further reading<span class="p">.</span></h1>
+    <p class="lede">Everything the slides of <i>Context Engineering: Human-to-Human Edition</i> cite<span class="p">,</span> what it says<span class="p">,</span> and where to read it<span class="p">.</span> Free first<span class="p">,</span> then borrow<span class="p">,</span> then buy<span class="p">.</span></p>
+  </header>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" data-f="all">All 55</button>
+      <button type="button" data-f="free">Free to read</button>
+      <button type="button" data-f="borrow">Borrow</button>
+    </div>
+    <p class="key">
+      <span class="btn free">free</span> open access or free web page
+      <span class="btn borrow">borrow</span> archive.org, free account
+      <span class="btn">paywall</span> publisher
+      <span class="btn buy">buy</span> amazon.de
+    </p>
+  </div>
+
+  <nav aria-label="Sections">
+<a href="#how-we-run-the-day">How we run the day</a>
+<a href="#language-conversation">Language &amp; conversation</a>
+<a href="#empathy-active-listening">Empathy &amp; active listening</a>
+<a href="#politics-power-structures">Politics &amp; power structures</a>
+<a href="#visuals-presentation">Visuals &amp; presentation</a>
+<a href="#mostly-nonsense">Mostly nonsense</a>
+<a href="#what-actually-does-the-work">What actually does the work</a>
+<a href="#tools">Tools</a>
+  </nav>
+
+<section id="how-we-run-the-day"><h2>How we run the day</h2>
+<div class="list">
+<article class="card" data-kinds="paywall">
+  <p class="cite">Guilford, J. P. (1956). The structure of intellect. <i>Psychological Bulletin</i>, 53(4), 267–293.</p>
+  <ul class="slides" aria-label="On the slides"><li>How we’re going to run today</li></ul>
+  <p class="what">Where “divergent” and “convergent” thinking come from: two of the operations in Guilford’s model of intelligence.</p><p class="caveat"><b>Caveat</b> The full model has few supporters now; the divergent/convergent split survives in creativity research.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1037/h0040755" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Osborn, A. F. (1953). <i>Applied Imagination: Principles and Procedures of Creative Thinking</i>. Scribner.</p>
+  <ul class="slides" aria-label="On the slides"><li>How we’re going to run today</li></ul>
+  <p class="what">The book that launched brainstorming. Its two rules: defer judgement, and go for quantity.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/appliedimaginati00osborich" rel="noopener">Borrow free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Diehl, M. &amp; Stroebe, W. (1987). Productivity loss in brainstorming groups: Toward the solution of a riddle. <i>JPSP</i>, 53(3), 497–509.</p>
+  <ul class="slides" aria-label="On the slides"><li>How we’re going to run today (notes)</li></ul>
+  <p class="what">Groups brainstorming out loud produce fewer ideas than the same people working alone. The main cause is waiting your turn to speak. Hence: think alone first, then share.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1037/0022-3514.53.3.497" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Design Council (2005). The Double Diamond.</p>
+  <ul class="slides" aria-label="On the slides"><li>How we’re going to run today</li></ul>
+  <p class="what">Diverge, converge, twice: once on the problem, once on the solution.</p><p class="caveat"><b>Caveat</b> The Design Council’s own history dates the first public version to 2004.</p>
+  <p class="links"><a class="btn web" href="https://www.designcouncil.org.uk/our-resources/the-double-diamond/history-of-the-double-diamond/" rel="noopener">Design Council</a></p>
+</article>
+</div></section>
+<section id="language-conversation"><h2>Language <span class="p">&amp;</span> conversation</h2>
+<div class="list">
+<article class="card" data-kinds="free">
+  <p class="cite">Clark, H. H. &amp; Brennan, S. E. (1991). Grounding in communication. In L. B. Resnick, J. M. Levine &amp; S. D. Teasley (eds), <i>Perspectives on Socially Shared Cognition</i> (pp. 127–149). APA.</p>
+  <ul class="slides" aria-label="On the slides"><li>They don’t know what you know</li></ul>
+  <p class="what">Every conversation builds on common ground, what both people know and know the other knows, and adds to it as you go.</p>
+  <p class="links"><a class="btn free" href="https://web.stanford.edu/~clark/1990s/Clark,%20H.H.%20_%20Brennan,%20S.E.%20_Grounding%20in%20communication_%201991.pdf" rel="noopener">Free PDF (Clark’s site)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Lewis, D. (1979). Scorekeeping in a language game. <i>Journal of Philosophical Logic</i>, 8(1), 339–359.</p>
+  <ul class="slides" aria-label="On the slides"><li>They don’t know what you know</li></ul>
+  <p class="what">If you say something that assumes a fact, listeners usually accept it as background: why “as you know…” works, within limits.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1007/BF00258436" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Camerer, C., Loewenstein, G. &amp; Weber, M. (1989). The curse of knowledge in economic settings: An experimental analysis. <i>Journal of Political Economy</i>, 97(5), 1232–1254.</p>
+  <ul class="slides" aria-label="On the slides"><li>They don’t know what you know</li></ul>
+  <p class="what">Better-informed people can’t ignore what they know, even when it would pay them to.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1086/261651" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Newton, E. L. (1990). <i>The rocky road from actions to intentions</i>. PhD dissertation, Stanford University.</p>
+  <ul class="slides" aria-label="On the slides"><li>They don’t know what you know</li></ul>
+  <p class="what">The tapping study. Tappers drummed well-known songs and predicted listeners would name half of them; listeners got 3 out of 120.</p><p class="caveat"><b>Caveat</b> One unpublished study, never formally replicated. Made famous by Heath &amp; Heath’s <i>Made to Stick</i>.</p>
+  <p class="links"><a class="btn free" href="https://www.gwern.net/doc/psychology/cognitive-bias/illusion-of-depth/1990-newton.pdf" rel="noopener">Free PDF (copy on gwern.net)</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Kauffman, S. A. (2000). <i>Investigations</i>. Oxford University Press.</p>
+  <ul class="slides" aria-label="On the slides"><li>They don’t know what you know</li></ul>
+  <p class="what">The “adjacent possible”: the next steps you can reach from where you are now. A metaphor from biology, borrowed here for where to pitch an idea.</p><p class="caveat"><b>Caveat</b> A complexity-science idea, not a communication finding. Steven Johnson’s <i>Where Good Ideas Come From</i> (2010) is the friendlier read.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/investigations00kauf" rel="noopener">Borrow free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Aristotle. <i>Rhetoric</i>, book I, ch. 3 (trans. W. Rhys Roberts).</p>
+  <ul class="slides" aria-label="On the slides"><li>Talking is translating</li></ul>
+  <p class="what">Of speaker, subject and listener, it’s the listener who decides what a speech is for.</p>
+  <p class="links"><a class="btn web" href="https://classics.mit.edu/Aristotle/rhetoric.1.i.html" rel="noopener">Free text (MIT Classics)</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Kinneavy, J. L. (1971). <i>A Theory of Discourse: The Aims of Discourse</i>. Prentice-Hall.</p>
+  <ul class="slides" aria-label="On the slides"><li>Talking is translating</li></ul>
+  <p class="what">The communication triangle: writer, reader, reality, and the text between them. Our triangle relabels its corners for engineers.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/theoryofdiscours0000kinn_j5a1" rel="noopener">Borrow free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Meyer, E. (2014). <i>The Culture Map: Breaking Through the Invisible Boundaries of Global Business</i>. PublicAffairs. Ch. 4.</p>
+  <ul class="slides" aria-label="On the slides"><li>Talking is translating (notes)</li></ul>
+  <p class="what">Some cultures want the conclusion first, others the reasoning first. Meyer puts Germany towards reasoning first: worth knowing before you “lead with the summary”.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=The+Culture+Map+Erin+Meyer&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Heath, C. &amp; Heath, D. (2007). <i>Made to Stick: Why Some Ideas Survive and Others Die</i>. Random House.</p>
+  <ul class="slides" aria-label="On the slides"><li>Coin a phrase, then repeat it</li></ul>
+  <p class="what">What makes an idea memorable: simple, unexpected, concrete, credible, emotional, a story.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Made+to+Stick+Heath&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Hasher, L., Goldstein, D. &amp; Toppino, T. (1977). Frequency and the conference of referential validity. <i>Journal of Verbal Learning and Verbal Behavior</i>, 16(1), 107–112.</p>
+  <ul class="slides" aria-label="On the slides"><li>Coin a phrase, then repeat it</li></ul>
+  <p class="what">The illusory truth effect: statements we’ve heard before feel more true. So repeat your phrase, and use it for true things only.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1016/S0022-5371(77)80012-1" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Banse, R. &amp; Scherer, K. R. (1996). Acoustic profiles in vocal emotion expression. <i>JPSP</i>, 70(3), 614–636.</p>
+  <ul class="slides" aria-label="On the slides"><li>Say it three ways; they guess</li></ul>
+  <p class="what">Listeners recognised 14 emotions from actors’ voices alone, well above chance. Tone carries meaning the words don’t.</p>
+  <p class="links"><a class="btn free" href="https://archive-ouverte.unige.ch/unige:102055" rel="noopener">Free (University of Geneva)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Goldin-Meadow, S. &amp; Alibali, M. W. (2013). Gesture’s role in speaking, learning, and creating language. <i>Annual Review of Psychology</i>, 64, 257–283.</p>
+  <ul class="slides" aria-label="On the slides"><li>Free your hands to think</li></ul>
+  <p class="what">Gesturing helps the speaker think and find words, not only the listener understand.</p>
+  <p class="links"><a class="btn free" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3642279/" rel="noopener">Free (PubMed Central)</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Hohpe, G. (2020). <i>The Software Architect Elevator: Redefining the Architect’s Role in the Digital Enterprise</i>. O’Reilly. Ch. 18 “Explaining Stuff” and ch. 19 “Show the Kids the Pirate Ship!”.</p>
+  <ul class="slides" aria-label="On the slides"><li>Build a ramp, not a cliff</li><li>Show the pirate ship first</li></ul>
+  <p class="what">Ch. 18: don’t drop people off a cliff of jargon or leave gaps you can’t see; build the vocabulary first, and test by asking them to teach it back. Ch. 19: show what the thing is for before its parts.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=The+Software+Architect+Elevator+Hohpe&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Pickering, M. J. &amp; Garrod, S. (2004). Toward a mechanistic psychology of dialogue. <i>Behavioral and Brain Sciences</i>, 27(2), 169–190.</p>
+  <ul class="slides" aria-label="On the slides"><li>Use their wording, not yours</li></ul>
+  <p class="what">People in conversation drift towards the same words and sentence shapes, and understand each other more easily when they do.</p>
+  <p class="links"><a class="btn free" href="https://doi.org/10.1017/S0140525X04000056" rel="noopener">Free to read (publisher)</a></p>
+</article>
+<article class="card" data-kinds="free paywall">
+  <p class="cite">Huang, K., Yeomans, M., Brooks, A. W., Minson, J. &amp; Gino, F. (2017). It doesn’t hurt to ask: Question-asking increases liking. <i>JPSP</i>, 113(3), 430–452.</p>
+  <ul class="slides" aria-label="On the slides"><li>Let them talk first</li><li>Prove you’re listening</li><li>Four real things do the work</li></ul>
+  <p class="what">People who ask more questions, especially follow-up questions, are liked more by the people they talk to.</p><p class="caveat"><b>Caveat</b> Observers watching the conversation didn’t show the effect: it’s about the person being asked.</p>
+  <p class="links"><a class="btn free" href="https://dash.harvard.edu/bitstream/1/35647952/1/huangyeomansbrooksminsongino_QuestionAsking_Manuscript.pdf" rel="noopener">Free PDF (Harvard)</a><a class="btn paywall" href="https://doi.org/10.1037/pspi0000097" rel="noopener">Publisher</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Johnstone, K. (1979). <i>Impro: Improvisation and the Theatre</i>. Faber &amp; Faber.</p>
+  <ul class="slides" aria-label="On the slides"><li>Let them talk first</li></ul>
+  <p class="what">The improviser’s classic on status and on accepting offers instead of blocking them, which is where “yes, and” thinking comes from.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Impro+Keith+Johnstone&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Walker, C. (2014). <i>From Contempt to Curiosity: Creating the Conditions for Groups to Collaborate Using Clean Language and Systemic Modelling</i>. Clean Publishing.</p>
+  <ul class="slides" aria-label="On the slides"><li>Swap contempt for curiosity</li></ul>
+  <p class="what">Using clean questions to turn a group’s judgements of each other into curiosity.</p><p class="caveat"><b>Caveat</b> A practitioner book; there are no controlled trials of Clean Language yet.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=From+Contempt+to+Curiosity+Caitlin+Walker&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Lawley, J. &amp; Tompkins, P. (2000). <i>Metaphors in Mind: Transformation through Symbolic Modelling</i>. The Developing Company Press.</p>
+  <ul class="slides" aria-label="On the slides"><li>Swap contempt for curiosity</li></ul>
+  <p class="what">David Grove’s clean questions, such as “And what kind of X is that X?”, written up as a method.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Metaphors+in+Mind+Lawley+Tompkins&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+</div></section>
+<section id="empathy-active-listening"><h2>Empathy <span class="p">&amp;</span> active listening</h2>
+<div class="list">
+<article class="card" data-kinds="buy">
+  <p class="cite">Voss, C. &amp; Raz, T. (2016). <i>Never Split the Difference: Negotiating As If Your Life Depended On It</i>. Harper Business.</p>
+  <ul class="slides" aria-label="On the slides"><li>Prove you’re listening (chs 2–3)</li><li>Label the feeling, not the person (ch. 3)</li><li>Get to “that’s right” (ch. 5)</li><li>Ask what and how, not why (ch. 7)</li></ul>
+  <p class="what">A former FBI hostage negotiator on mirroring, labelling feelings, getting to “that’s right” and open “what” and “how” questions.</p><p class="caveat"><b>Caveat</b> Experience and stories rather than studies. “Avoid why” comes from his company’s staff articles more than the book.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Never+Split+the+Difference+Voss&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Black Swan Group (2018). <i>Never Split the Difference: Negotiating Contracts</i> (e-book).</p>
+  <ul class="slides" aria-label="On the slides"><li>Label the feeling, not the person</li></ul>
+  <p class="what">Voss’s company’s short guide to labels, mirrors, summaries and the accusation audit.</p><p class="caveat"><b>Caveat</b> Marketing material; no evidence cited.</p>
+  <p class="links"><a class="btn web" href="https://www.blackswanltd.com/" rel="noopener">Black Swan Group</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Bavelas, J. B., Coates, L. &amp; Johnson, T. (2000). Listeners as co-narrators. <i>JPSP</i>, 79(6), 941–952.</p>
+  <ul class="slides" aria-label="On the slides"><li>Prove you’re listening</li><li>A fifth move is to wait</li></ul>
+  <p class="what">When listeners were distracted and stopped reacting, speakers told their stories worse, especially the ending. Reactions tied to the story mattered most, not just “mm-hmm”.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1037/0022-3514.79.6.941" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free paywall">
+  <p class="cite">Rowe, M. B. (1974). Wait-time and rewards as instructional variables, their influence on language, logic, and fate control: Part one, wait-time. <i>Journal of Research in Science Teaching</i>, 11(2), 81–94.</p>
+  <ul class="slides" aria-label="On the slides"><li>A fifth move is to wait</li></ul>
+  <p class="what">Teachers wait about a second for an answer. At three seconds or more, pupils gave longer answers and more of them answered.</p><p class="caveat"><b>Caveat</b> Classrooms, not meetings.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1002/tea.3660110202" rel="noopener">Publisher (paywalled)</a><a class="btn free" href="https://iris.peabody.vanderbilt.edu/wp-content/uploads/misc_media/fss/pdfs/2018/IRIS_fundamental_skill_sheet_wait-time.pdf" rel="noopener">Free summary (Vanderbilt)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Stivers, T. et al. (2009). Universals and cultural variation in turn-taking in conversation. <i>PNAS</i>, 106(26), 10587–10592.</p>
+  <ul class="slides" aria-label="On the slides"><li>A fifth move is to wait</li></ul>
+  <p class="what">Across ten languages, the usual gap before an answer ran from about 7 ms (Japanese) to about 470 ms (Danish). Cultures differ, but far less than the stereotypes say.</p>
+  <p class="links"><a class="btn free" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2705608/" rel="noopener">Free (PubMed Central)</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Rogers, C. R. &amp; Farson, R. E. (1957). <i>Active Listening</i>. Industrial Relations Center, University of Chicago.</p>
+  <ul class="slides" aria-label="On the slides"><li>Get to “that’s right”</li></ul>
+  <p class="what">The pamphlet for managers that named active listening. Its centre: check your understanding by saying it back.</p><p class="caveat"><b>Caveat</b> Often dated 1987, from a later reprint.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Active+Listening+Carl+Rogers+Farson&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Fisher, R. &amp; Ury, W. (1981). <i>Getting to Yes: Negotiating Agreement Without Giving In</i>. Houghton Mifflin. Chs 3 and 4.</p>
+  <ul class="slides" aria-label="On the slides"><li>Find the need behind the position</li></ul>
+  <p class="what">Interests, not positions. The two sisters and the orange: one wanted the fruit, the other the peel for a cake.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Getting+to+Yes+Fisher+Ury&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+</div></section>
+<section id="politics-power-structures"><h2>Politics <span class="p">&amp;</span> power structures</h2>
+<div class="list">
+<article class="card" data-kinds="free">
+  <p class="cite">Krackhardt, D. &amp; Hanson, J. R. (1993). Informal networks: The company behind the chart. <i>Harvard Business Review</i>, 71(4), 104–111.</p>
+  <ul class="slides" aria-label="On the slides"><li>Draw the chart they don’t print</li></ul>
+  <p class="what">Map who asks whom for advice and who trusts whom; it rarely matches the org chart.</p>
+  <p class="links"><a class="btn web" href="https://hbr.org/1993/07/informal-networks-the-company-behind-the-chart" rel="noopener">HBR (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Kerr, S. (1975). On the folly of rewarding A, while hoping for B. <i>Academy of Management Journal</i>, 18(4), 769–783.</p>
+  <ul class="slides" aria-label="On the slides"><li>Find out what they’re measured on</li></ul>
+  <p class="what">People do what they’re rewarded for, not what you hope they’ll do.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.5465/255378" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Appelo, J. Moving Motivators. Management 3.0.</p>
+  <ul class="slides" aria-label="On the slides"><li>Ask where they want to go next</li><li>Follow the five threads</li></ul>
+  <p class="what">A card game with ten motivators for talking about what drives someone.</p><p class="caveat"><b>Caveat</b> A conversation tool, not a validated test.</p>
+  <p class="links"><a class="btn web" href="https://management30.com/practice/moving-motivators/" rel="noopener">Management 3.0</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Liker, J. K. (2004). <i>The Toyota Way: 14 Management Principles from the World’s Greatest Manufacturer</i>. McGraw-Hill. Principle 13.</p>
+  <ul class="slides" aria-label="On the slides"><li>Pre-wire the decision</li></ul>
+  <p class="what">Nemawashi: decide slowly by consensus, talking to everyone before the meeting; then act fast.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/unknown0000unse_v8q6" rel="noopener">Borrow free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="buy free">
+  <p class="cite">König, O. &amp; Schattenhofer, K. (2006; 10th edn 2020). <i>Einführung in die Gruppendynamik</i>. Carl-Auer.</p>
+  <ul class="slides" aria-label="On the slides"><li>The task is only the tip</li><li>Every group has two edges</li></ul>
+  <p class="what">A short German introduction to group dynamics: what happens under the task, and the pulls of belonging, power and closeness.</p><p class="caveat"><b>Caveat</b> Ways of looking at a group, not findings to test. No English translation.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Einf%C3%BChrung+in+die+Gruppendynamik+K%C3%B6nig+Schattenhofer&amp;i=stripbooks" rel="noopener">amazon.de</a><a class="btn free" href="https://www.carl-auer.de/media/carl-auer/sample/LP/978-3-8497-0344-8.pdf" rel="noopener">Free sample (publisher)</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Schindler, R. (1957). Grundprinzipien der Psychodynamik in der Gruppe. <i>Psyche</i>, 11(5), 308–314.</p>
+  <ul class="slides" aria-label="On the slides"><li>Rank is a position</li></ul>
+  <p class="what">Rank dynamics: alpha, beta, gamma and omega are positions in a group, not personalities.</p><p class="caveat"><b>Caveat</b> Some sources date it 1956. Reprinted in Schindler’s selected writings, <i>Das lebendige Gefüge der Gruppe</i> (Psychosozial-Verlag, 2016).</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Das+lebendige+Gef%C3%BCge+der+Gruppe+Schindler&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Covey, S. R. (1989). <i>The 7 Habits of Highly Effective People</i>. Simon &amp; Schuster. Habit 1.</p>
+  <ul class="slides" aria-label="On the slides"><li>Work where you have influence</li></ul>
+  <p class="what">The circle of concern and the circle of influence: put your energy where you can change something.</p><p class="caveat"><b>Caveat</b> Covey drew two circles; the inner “circle of control” was added later by others.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/sevenhabitsofhig0000cove_z5o2" rel="noopener">Borrow free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">VeneKlasen, L. &amp; Miller, V. (2002). <i>A New Weave of Power, People &amp; Politics</i>. World Neighbors; Practical Action, 2007.</p>
+  <ul class="slides" aria-label="On the slides"><li>Power isn’t only power over</li></ul>
+  <p class="what">Power over, power with, power to and power within, from an activist’s guide to advocacy.</p>
+  <p class="links"><a class="btn free" href="https://justassociates.org/wp-content/uploads/2007/08/new_weave_en_ch3.pdf" rel="noopener">Free PDF, ch. 3 (Just Associates)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Rowlands, J. (1997). <i>Questioning Empowerment: Working with Women in Honduras</i>. Oxfam.</p>
+  <ul class="slides" aria-label="On the slides"><li>Power isn’t only power over</li></ul>
+  <p class="what">An earlier version of the four kinds of power, from development work.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.3362/9780855988364" rel="noopener">Publisher</a></p>
+</article>
+<article class="card" data-kinds="borrow">
+  <p class="cite">Follett, M. P. (1924). <i>Creative Experience</i>. Longmans, Green.</p>
+  <ul class="slides" aria-label="On the slides"><li>Power isn’t only power over</li></ul>
+  <p class="what">The original split between power-over and power-with, a century old.</p>
+  <p class="links"><a class="btn borrow" href="https://archive.org/details/creativeexperien00foll" rel="noopener">Read free (archive.org)</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Knaths, M. (2007). <i>Spiele mit der Macht: Wie Frauen sich durchsetzen</i>. Hoffmann und Campe.</p>
+  <ul class="slides" aria-label="On the slides"><li>Spot the power move</li></ul>
+  <p class="what">A German practitioner’s guide to the unspoken rules of hierarchy and power moves in meetings.</p><p class="caveat"><b>Caveat</b> A practitioner book, not research.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Spiele+mit+der+Macht+Knaths&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+</div></section>
+<section id="visuals-presentation"><h2>Visuals <span class="p">&amp;</span> presentation</h2>
+<div class="list">
+<article class="card" data-kinds="buy">
+  <p class="cite">Williams, R. (2014). <i>The Non-Designer’s Design Book</i> (4th edn). Peachpit Press.</p>
+  <ul class="slides" aria-label="On the slides"><li>Four rules do most of the design</li><li>Contrast</li><li>Repetition</li><li>Alignment</li><li>Proximity</li></ul>
+  <p class="what">Contrast, repetition, alignment and proximity: four rules that do most of the work.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=The+Non-Designer%27s+Design+Book+Robin+Williams&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Davies, R. (2021). <i>Everything I Know About Life I Learned From PowerPoint</i>. Profile Books.</p>
+  <ul class="slides" aria-label="On the slides"><li>Write headlines, not headings (pp. 164–167)</li><li>Strong verbs, short sentences (pp. 141–143, 160–163)</li><li>Write the end first (laws 6–8; pp. 124–125)</li><li>Say it in three (pp. 131–137)</li><li>Short, short, long (pp. 153–155)</li><li>Leave it out (pp. 142–144)</li><li>Point at the evidence (p. 198)</li><li>Give results, not activity</li></ul>
+  <p class="what">A funny, practical book on making slides for real work: headlines that say what you think, an ending that is your ask, and leaving things out.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Everything+I+Know+About+Life+I+Learned+From+PowerPoint+Davies&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Gladwell, M. (2018). “Strong Verbs, Short Sentences”. <i>Revisionist History</i>, season 4. Pushkin.</p>
+  <ul class="slides" aria-label="On the slides"><li>Strong verbs, short sentences</li></ul>
+  <p class="what">The podcast episode about Bernadine Healy, the first woman to lead the NIH, whose desk sign gave the slide its title.</p>
+  <p class="links"><a class="btn web" href="https://omny.fm/shows/revisionist-history/strong-verbs-short-sentences" rel="noopener">Listen</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Steel, J. (2006). <i>Perfect Pitch: The Art of Selling Ideas and Winning New Business</i>. Wiley.</p>
+  <ul class="slides" aria-label="On the slides"><li>Point at the evidence</li></ul>
+  <p class="what">An adman on pitching; Davies retells his Porsche pitch, where the audience’s own words did the persuading.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Perfect+Pitch+Jon+Steel&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="buy">
+  <p class="cite">Leopold, K. &amp; Kaltenecker, S. (2023). <i>Flight Levels: Organisationen mit Business-Agilität führen</i>. dpunkt.</p>
+  <ul class="slides" aria-label="On the slides"><li>Draw it three ways</li></ul>
+  <p class="what">Three altitudes of work: operations, coordination, strategy. We borrow the altitudes for audiences.</p>
+  <p class="links"><a class="btn buy" href="https://www.amazon.de/s?k=Flight+Levels+Leopold+Kaltenecker&amp;i=stripbooks" rel="noopener">amazon.de</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Garner, J. K. &amp; Alley, M. P. (2013). How the design of presentation slides affects audience comprehension. <i>International Journal of Engineering Education</i>, 29(6), 1564–1579.</p>
+  <ul class="slides" aria-label="On the slides"><li>Write headlines, not headings (notes)</li></ul>
+  <p class="what">Slides with a sentence headline and visual evidence were understood better than topic-and-bullets slides.</p><p class="caveat"><b>Caveat</b> Six changes at once, mostly tested by the method’s own authors; an independent replication found no comprehension gain.</p>
+  <p class="links"><a class="btn free" href="https://www.ijee.ie/articles/Vol29-6/23_ijee2791ns.pdf" rel="noopener">Free PDF</a></p>
+</article>
+</div></section>
+<section id="mostly-nonsense"><h2>Mostly nonsense<span class="p">:</span> what didn<span class="p">’</span>t survive testing</h2>
+<div class="list">
+<article class="card" data-kinds="paywall">
+  <p class="cite">Wood, J. V., Perunovic, W. Q. E. &amp; Lee, J. W. (2009). Positive self-statements: Power for some, peril for others. <i>Psychological Science</i>, 20(7), 860–866.</p>
+  <ul class="slides" aria-label="On the slides"><li>Mostly nonsense</li></ul>
+  <p class="what">Repeating “I’m a lovable person” made people with low self-esteem feel worse.</p><p class="caveat"><b>Caveat</b> Small samples.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1111/j.1467-9280.2009.02370.x" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Wiseman, R. et al. (2012). The eyes don’t have it: Lie detection and Neuro-Linguistic Programming. <i>PLoS ONE</i>, 7(7), e40259.</p>
+  <ul class="slides" aria-label="On the slides"><li>Mostly nonsense</li></ul>
+  <p class="what">NLP says eye movements give liars away. Three studies found they don’t, and training people in the cues didn’t help.</p>
+  <p class="links"><a class="btn free" href="https://doi.org/10.1371/journal.pone.0040259" rel="noopener">Free (PLoS ONE)</a></p>
+</article>
+<article class="card" data-kinds="free paywall">
+  <p class="cite">Brown, N. J. L., Sokal, A. D. &amp; Friedman, H. L. (2013). The complex dynamics of wishful thinking: The critical positivity ratio. <i>American Psychologist</i>, 68(9), 801–813.</p>
+  <ul class="slides" aria-label="On the slides"><li>Mostly nonsense</li></ul>
+  <p class="what">Took apart the maths behind the famous 3:1 “positivity ratio”; the ratio was formally withdrawn.</p>
+  <p class="links"><a class="btn free" href="https://arxiv.org/abs/1307.7006" rel="noopener">Free preprint (arXiv)</a><a class="btn paywall" href="https://doi.org/10.1037/a0032850" rel="noopener">Publisher</a></p>
+</article>
+<article class="card" data-kinds="free paywall">
+  <p class="cite">Ranehill, E. et al. (2015). Assessing the robustness of power posing: No effect on hormones and risk tolerance in a large sample of men and women. <i>Psychological Science</i>, 26(5), 653–656.</p>
+  <ul class="slides" aria-label="On the slides"><li>Mostly nonsense</li></ul>
+  <p class="what">With 200 people, power poses changed how powerful people felt, but not their hormones or risk-taking.</p>
+  <p class="links"><a class="btn free" href="https://doi.org/10.5167/uzh-110756" rel="noopener">Free (University of Zurich)</a><a class="btn paywall" href="https://doi.org/10.1177/0956797614553946" rel="noopener">Publisher</a></p>
+</article>
+</div></section>
+<section id="what-actually-does-the-work"><h2>What actually does the work</h2>
+<div class="list">
+<article class="card" data-kinds="free">
+  <p class="cite">Wampold, B. E. (2015). How important are the common factors in psychotherapy? An update. <i>World Psychiatry</i>, 14(3), 270–277.</p>
+  <ul class="slides" aria-label="On the slides"><li>Four real things do the work</li></ul>
+  <p class="what">In therapy, the relationship, empathy and expectations matter more than the specific technique.</p>
+  <p class="links"><a class="btn free" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4592639/" rel="noopener">Free (PubMed Central)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Tversky, A. &amp; Kahneman, D. (1981). The framing of decisions and the psychology of choice. <i>Science</i>, 211(4481), 453–458.</p>
+  <ul class="slides" aria-label="On the slides"><li>Four real things do the work</li></ul>
+  <p class="what">The same choice framed as lives saved or lives lost flips what most people pick.</p><p class="caveat"><b>Caveat</b> Replicated in the Many Labs project, with a smaller effect (Klein et al., 2014).</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1126/science.7455683" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+<article class="card" data-kinds="paywall">
+  <p class="cite">Constantino, M. J., Vîslă, A., Coyne, A. E. &amp; Boswell, J. F. (2018). A meta-analysis of the association between patients’ early treatment outcome expectation and their posttreatment outcomes. <i>Psychotherapy</i>, 55(4), 473–485.</p>
+  <ul class="slides" aria-label="On the slides"><li>Four real things do the work</li></ul>
+  <p class="what">Across 81 samples, people who expected therapy to help did a bit better.</p>
+  <p class="links"><a class="btn paywall" href="https://doi.org/10.1037/pst0000169" rel="noopener">Publisher (paywalled)</a></p>
+</article>
+</div></section>
+<section id="tools"><h2>Tools</h2>
+<div class="list">
+<article class="card" data-kinds="free">
+  <p class="cite">Nur einfache Wörter</p>
+  <ul class="slides" aria-label="On the slides"><li>Strong verbs, short sentences</li></ul>
+  <p class="what">Our German version of the Up-Goer Five editor: explain your idea using only the most common German words.</p>
+  <p class="links"><a class="btn web" href="https://simonrrr.github.io/nur-einfache-woerter/" rel="noopener">Try it</a></p>
+</article>
+<article class="card" data-kinds="free">
+  <p class="cite">Up-Goer Five Text Editor</p>
+  <ul class="slides" aria-label="On the slides"><li>Strong verbs, short sentences</li></ul>
+  <p class="what">The English original: only the thousand most common words, after xkcd 1133.</p>
+  <p class="links"><a class="btn web" href="https://splasho.com/upgoer5/" rel="noopener">Try it</a></p>
+</article>
+</div></section>
+  <p class="empty" id="empty" hidden>Nothing here with that kind of link<span class="p">.</span></p>
+
+  <footer>
+    <p>By Katie Clark and Simon<span class="p">.</span> AI Engineering Summit Berlin<span class="p">,</span> November 2026<span class="p">.</span> Links checked 8 November 2026<span class="p">.</span></p>
+    <p>Free copies are author<span class="p">,</span> repository or publisher versions<span class="p">;</span> preprints may differ slightly from the published paper<span class="p">.</span> Borrowing on archive.org needs a free account and lends one copy at a time<span class="p">.</span> The amazon.de links are plain searches<span class="p">,</span> not affiliate links<span class="p">;</span> your local library or bookshop works just as well<span class="p">.</span></p>
+  </footer>
+</div>
+
+<script>
+const buttons = [...document.querySelectorAll(".seg button")];
+const cards = [...document.querySelectorAll(".card")];
+const sections = [...document.querySelectorAll("section")];
+const empty = document.getElementById("empty");
+
+function show(f) {
+  buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === f)));
+  cards.forEach(c => { c.hidden = f !== "all" && !c.dataset.kinds.split(" ").includes(f); });
+  sections.forEach(s => { s.hidden = !s.querySelector(".card:not([hidden])"); });
+  empty.hidden = cards.some(c => !c.hidden);
+  try { localStorage.setItem("reading-filter", f); } catch (e) {}
+}
+
+buttons.forEach(b => b.addEventListener("click", () => show(b.dataset.f)));
+let start = "all";
+try { start = localStorage.getItem("reading-filter") || "all"; } catch (e) {}
+show(["all", "free", "borrow"].includes(start) ? start : "all");
+</script>
+</body>
+</html>

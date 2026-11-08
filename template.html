@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Further Reading</title>
+<meta name="description" content="Further reading for the workshop Context Engineering: Human-to-Human Edition, with free copies where they exist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght,SOFT@9..144,900,100&display=swap">
+<style>
+/* Same look as Nur einfache Wörter: the workshop deck's sky ground, white cards, Cooper Black headings. */
+:root {
+  --bg: #99CDED; --card: #FFFFFF; --ink: #000000; --muted: #2B3A44;
+  --accent: #676DD3; --yellow: #EFBD40; --bad: #A62B17; --good: #3B9A4E;
+  --chip: #E6F2FA; --line: rgba(0, 0, 0, .12);
+  --display: "Cooper Black", "CooperBlackMS", "Fraunces", Georgia, serif;
+  --body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1B24; --card: #182833; --ink: #F1F5F8; --muted: #A9BBC7; --accent: #A2A6F2;
+    --bad: #F08A73; --good: #6CC883; --chip: #22394A; --line: rgba(255, 255, 255, .14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1B24; --card: #182833; --ink: #F1F5F8; --muted: #A9BBC7; --accent: #A2A6F2;
+  --bad: #F08A73; --good: #6CC883; --chip: #22394A; --line: rgba(255, 255, 255, .14);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink); font: 1.0625rem/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2rem 3rem;
+}
+.wrap { max-width: 60rem; margin: 0 auto; display: grid; gap: 2rem; }
+h1 {
+  font: 900 clamp(2.4rem, 6vw, 4.5rem)/1 var(--display); font-variation-settings: "SOFT" 100;
+  letter-spacing: -.02em; margin: 0; text-wrap: balance;
+}
+h2 {
+  font: 900 clamp(1.6rem, 3.5vw, 2.25rem)/1.1 var(--display); font-variation-settings: "SOFT" 100;
+  margin: 0 0 1rem; text-wrap: balance; scroll-margin-top: 1rem;
+}
+.lede { margin: .75rem 0 0; max-width: 42rem; font-size: 1.2rem; }
+.p { color: var(--accent); }
+.controls { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+.seg { display: inline-flex; flex-wrap: wrap; background: var(--card); border-radius: 999px; padding: 4px; gap: 2px; }
+.seg button {
+  font: 700 1rem var(--body); border: 0; cursor: pointer; color: var(--ink); background: transparent;
+  padding: .45rem .95rem; border-radius: 999px;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-weight: 700; }
+nav a { color: var(--ink); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.list { display: grid; gap: 1rem; }
+.card { background: var(--card); padding: 1.25rem 1.5rem; display: grid; gap: .6rem; min-width: 0; }
+.card[hidden] { display: none; }
+.cite { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.slides { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.slides li { background: var(--chip); padding: .1rem .55rem; border-radius: 4px; font-size: .9rem; }
+.what { margin: 0; }
+.caveat { margin: 0; color: var(--muted); }
+.caveat b { color: var(--bad); margin-right: .25rem; }
+.links { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 0; }
+.btn {
+  display: inline-block; font-weight: 700; text-decoration: none; color: var(--ink);
+  padding: .35rem .85rem; border-radius: 999px; box-shadow: inset 0 0 0 2px var(--ink);
+}
+.btn.free { background: var(--good); color: #fff; box-shadow: none; }
+.btn.borrow { background: var(--accent); color: #fff; box-shadow: none; }
+.btn.buy { background: var(--yellow); color: #000; box-shadow: none; }
+.btn:hover { text-decoration: underline; text-underline-offset: 3px; }
+.key { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: 0; color: var(--muted); }
+.key .btn { pointer-events: none; padding: .15rem .6rem; font-size: .9rem; }
+.empty { background: var(--card); padding: 1.25rem 1.5rem; margin: 0; }
+footer { color: var(--muted); font-size: .95rem; display: grid; gap: .4rem; }
+footer p { margin: 0; }
+footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Further reading<span class="p">.</span></h1>
+    <p class="lede">Everything the slides of <i>Context Engineering: Human-to-Human Edition</i> cite<span class="p">,</span> what it says<span class="p">,</span> and where to read it<span class="p">.</span> Free first<span class="p">,</span> then borrow<span class="p">,</span> then buy<span class="p">.</span></p>
+  </header>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" data-f="all">All <!--N--></button>
+      <button type="button" data-f="free">Free to read</button>
+      <button type="button" data-f="borrow">Borrow</button>
+    </div>
+    <p class="key">
+      <span class="btn free">free</span> open access or free web page
+      <span class="btn borrow">borrow</span> archive.org, free account
+      <span class="btn">paywall</span> publisher
+      <span class="btn buy">buy</span> amazon.de
+    </p>
+  </div>
+
+  <nav aria-label="Sections">
+<!--NAV-->
+  </nav>
+
+<!--BODY-->
+  <p class="empty" id="empty" hidden>Nothing here with that kind of link<span class="p">.</span></p>
+
+  <footer>
+    <p>By Katie Clark and Simon<span class="p">.</span> AI Engineering Summit Berlin<span class="p">,</span> November 2026<span class="p">.</span> Links checked 8 November 2026<span class="p">.</span></p>
+    <p>Free copies are author<span class="p">,</span> repository or publisher versions<span class="p">;</span> preprints may differ slightly from the published paper<span class="p">.</span> Borrowing on archive.org needs a free account and lends one copy at a time<span class="p">.</span> The amazon.de links are plain searches<span class="p">,</span> not affiliate links<span class="p">;</span> your local library or bookshop works just as well<span class="p">.</span></p>
+  </footer>
+</div>
+
+<script>
+const buttons = [...document.querySelectorAll(".seg button")];
+const cards = [...document.querySelectorAll(".card")];
+const sections = [...document.querySelectorAll("section")];
+const empty = document.getElementById("empty");
+
+function show(f) {
+  buttons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === f)));
+  cards.forEach(c => { c.hidden = f !== "all" && !c.dataset.kinds.split(" ").includes(f); });
+  sections.forEach(s => { s.hidden = !s.querySelector(".card:not([hidden])"); });
+  empty.hidden = cards.some(c => !c.hidden);
+  try { localStorage.setItem("reading-filter", f); } catch (e) {}
+}
+
+buttons.forEach(b => b.addEventListener("click", () => show(b.dataset.f)));
+let start = "all";
+try { start = localStorage.getItem("reading-filter") || "all"; } catch (e) {}
+show(["all", "free", "borrow"].includes(start) ? start : "all");
+</script>
+</body>
+</html>
