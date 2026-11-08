@@ -18,6 +18,6 @@ Link kinds in `sources.py`:
 
 ## Hosting on GitHub Pages
 
-As for `nur-einfache-woerter`: create a public repository (e.g. `further-reading`), upload `index.html`, then Settings → Pages → Deploy from a branch → `main` / root. It appears at `https://simonrrr.github.io/further-reading/`.
+As for `nur-einfache-woerter`: create a public repository (e.g. `influencer-reading`), upload `index.html`, then Settings → Pages → Deploy from a branch → `main` / root. It appears at `https://simonrrr.github.io/influencer-reading/`.
 
 Links checked 8 November 2026. Publishers (APA, Wiley, Sage, Science) block scripted checks, so their DOI links were checked to resolve, not to load.
